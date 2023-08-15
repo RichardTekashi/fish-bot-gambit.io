@@ -22,8 +22,6 @@ end
 local vkeys = require 'vkeys'
 local effil = require 'effil'
 local encoding = require 'encoding'
-local imgui = require 'imgui'
-local inicfg = require 'inicfg'
 local sampev = require 'lib.samp.events'
 encoding.default = 'CP1251'
 u8 = encoding.UTF8
@@ -38,16 +36,16 @@ function main()
     end
     -- вырежи тут, если хочешь отключить проверку обновлений
     if autoupdate_loaded and enable_autoupdate and Update then
-		sampAddChatMessage("{33AA33}У скрипта вышло обновление, чтобы скачать, воспользуйтесь /update", -1)
+		sampAddChatMessage("{33AA33}� ������� ����� ����������. �������������� /update", -1)
         --pcall(Update.check, Update.json_url, Update.prefix, Update.url)
     end
     -- вырежи тут, если хочешь отключить проверку обновлений
 	sampRegisterChatCommand('update', function()
 		pcall(Update.check, Update.json_url, Update.prefix, Update.url)
-		sampAddChatMessage("{33AA33}Скрипт успешно обновлен!", -1)
+		sampAddChatMessage("{33AA33}���������� ������� �������!", -1)
 	end)
 	sampRegisterChatCommand('test', function()
-		sampAddChatMessage("{33AA33}Скрипт успешно обновлен! Команда появилась и работает!", -1)
+		sampAddChatMessage("{33AA33}���������� ������� �������! ������� ��������", -1)
 	end)
     -- дальше идёт ваш код
 end
